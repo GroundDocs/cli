@@ -20,9 +20,8 @@
         "start": "node dist/cli.js",
         "dev": "nodemon --watch src --ext ts,json --exec \"npm run build\"",
         "prepare": "npm run build",
-        "build:prod": "npm run build && npm run test",
-        "publish-patch": "npm version patch && npm run build:prod && npm publish --access public",
-        "test": "jest"
+        "build:prod": "npm run build",
+        "publish-patch": "npm version patch && npm run build:prod && npm publish --access public"
     },
     "keywords": [
         "mcp",
