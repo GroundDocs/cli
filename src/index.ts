@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import type { ValidClient, InstallOptions } from "./types.js";
 import { getDefaultConfig } from "./config.js";
 import { writeConfig } from "./utils.js";
@@ -36,7 +38,7 @@ export async function install(
     );
     console.log(
       chalk.yellow(
-        `You may need to restart ${capitalizedClient} to see the Magic MCP server.`
+        `You may need to restart ${capitalizedClient} to see the GroundDocs MCP server.`
       )
     );
     await promptForRestart(client);
