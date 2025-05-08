@@ -1,6 +1,6 @@
 {
     "name": "@grounddocs/cli",
-    "version": "0.0.22",
+    "version": "0.0.23",
     "type": "module",
     "description": "MCP configuration installer by GroundDocs",
     "main": "dist/index.js",
