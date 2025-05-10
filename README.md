@@ -8,7 +8,7 @@ GroundDocs is a version-aware Kubernetes documentation assistant. It connects LL
 npx @grounddocs/cli@latest install <client>
 ```
 
-**Supported clients:** cursor, windsurf, cline, claude, witsy, enconvo
+**Supported clients:** cursor, windsurf, cline, claude, witsy, enconvo, vscode
 
 
 ## 🔧 Manual Setup

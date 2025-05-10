@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import type { ValidClient, InstallOptions } from "./types.js";
-import { getDefaultConfig } from "./config.js";
-import { writeConfig } from "./utils.js";
+import { getDefaultConfig, getVSCodeConfig } from "./config.js";
+import { writeDefaultConfig, writeVSCodeConfig } from "./utils.js";
 import { promptForRestart } from "./client.js";
 import ora from "ora";
 import chalk from "chalk";
@@ -18,9 +18,14 @@ export async function install(
   ).start();
 
   try {
-    const config = { ...getDefaultConfig(options?.apiKey) };
-
-    writeConfig(client, config);
+    if (client === "vscode") {
+      const config = { ...getVSCodeConfig(options?.apiKey) };
+      writeVSCodeConfig(client, config);
+    } else {
+      const config = { ...getDefaultConfig(options?.apiKey) };
+      writeDefaultConfig(client, config);
+    }
+    
     spinner.succeed(
       `Successfully installed configuration for ${capitalizedClient}`
     );
