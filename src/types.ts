@@ -5,7 +5,8 @@ export type ValidClient =
   | "windsurf"
   | "witsy"
   | "enconvo"
-  | "cursor";
+  | "cursor"
+  | "vscode";
 
 export const VALID_CLIENTS: ValidClient[] = [
   "claude",
@@ -15,6 +16,7 @@ export const VALID_CLIENTS: ValidClient[] = [
   "witsy",
   "enconvo",
   "cursor",
+  "vscode"
 ];
 
 export interface ServerConfig {
@@ -24,6 +26,15 @@ export interface ServerConfig {
 
 export interface ClientConfig {
   mcpServers: Record<string, ServerConfig>;
+}
+
+export interface VSCodeMCPConfig {
+  inputs: Array<string>;
+  servers: Record<string, ServerConfig>;
+}
+
+export interface VSCodeConfig {
+  mcp: VSCodeMCPConfig;
 }
 
 export interface InstallOptions {

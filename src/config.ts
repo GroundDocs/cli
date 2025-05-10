@@ -43,6 +43,7 @@ export const clientPaths: Record<string, string> = {
   witsy: path.join(baseDir, "Witsy", "settings.json"),
   enconvo: path.join(homeDir, ".config", "enconvo", "mcp_config.json"),
   cursor: path.join(homeDir, ".cursor", "mcp.json"),
+  vscode: path.join(baseDir, "Code", "User", "settings.json"),
 };
 
 const createGroundDocsArgs = (apiKey: string) => [
@@ -71,6 +72,20 @@ export const getDefaultConfig = (apiKey: string = "YOUR_API_KEY") => {
   return {
     mcpServers: {
       "@grounddocs/grounddocs": command,
+    },
+  };
+};
+
+export const getVSCodeConfig = (apiKey: string = "YOUR_API_KEY") => {
+  const grounddocsArgs = createGroundDocsArgs(apiKey);
+  const command = createPlatformCommand(grounddocsArgs);
+
+  return {
+    mcp: {
+      servers: {
+        "@grounddocs/grounddocs": command,
+      },
+      inputs: []
     },
   };
 };
